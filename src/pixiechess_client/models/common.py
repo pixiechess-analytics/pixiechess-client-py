@@ -30,12 +30,15 @@ class Helmet(CamelModel):
 class PlayerInfo(CamelModel):
     """Compact player identity returned inline on match-history rows.
 
-    ``helmet`` is absent for users who haven't equipped one.
+    Only ``address`` is guaranteed. The wire response can omit every
+    other field for "ghost" wallets — addresses that played games but
+    never registered a username/helmet. The /user/{addr} endpoint also
+    404s for these.
     """
 
     address: str
-    username: str
-    username_display: str
+    username: str | None = None
+    username_display: str | None = None
     helmet: Helmet | None = None
 
 
