@@ -1,10 +1,15 @@
 """Auction-related models."""
 
-from datetime import date, datetime
+from datetime import date as _date
+from datetime import datetime
 
-from pydantic import Field, field_validator
+from pydantic import AliasChoices, Field, field_validator
 
 from .common import CamelModel, ResponseMeta, date_dict_validator
+
+# Alias for class-level annotations like `date: date` where the field
+# name would otherwise shadow the imported type.
+date = _date
 
 
 class AuctionMetadata(CamelModel):
@@ -154,21 +159,11 @@ class PastAuctionEntry(CamelModel):
 class PastDayBucket(CamelModel):
     """One day-bucket inside :class:`PastAuctionsPage`. The server
     sometimes sends the date under ``_id`` instead of ``date``; both are
-    accepted via the alias-from-validator.
+    accepted.
     """
 
-    date: date
+    date: _date = Field(validation_alias=AliasChoices("date", "_id"))
     auctions: list[PastAuctionEntry]
-
-    @field_validator("date", mode="before")
-    @classmethod
-    def _from_id_or_date(cls, v: object) -> date | dict:
-        # `_id` is preferred when present; serde-style alias.
-        if isinstance(v, dict):
-            return v
-        if isinstance(v, date):
-            return v
-        raise ValueError(f"expected {{year, month, day}}, got {v!r}")
 
     _v_date = date_dict_validator("date")
 

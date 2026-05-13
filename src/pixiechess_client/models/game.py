@@ -3,6 +3,8 @@
 from datetime import datetime
 from typing import Any
 
+from pydantic import Field
+
 from .common import CamelModel, ResponseMeta
 
 
@@ -32,7 +34,7 @@ class Game(CamelModel):
     games.
     """
 
-    id: str
+    id: str = Field(alias="_id")
     game_id: str
     board: dict[str, Any]
     created_at: datetime
