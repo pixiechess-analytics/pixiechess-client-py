@@ -57,3 +57,7 @@ known-first-party = ["pixiechess_client"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 asyncio_mode = "auto"
+markers = [
+    "live: hits api.pixiechess.xyz; skipped by default — run with `-m live`",
+]
+addopts = "-m 'not live'"
