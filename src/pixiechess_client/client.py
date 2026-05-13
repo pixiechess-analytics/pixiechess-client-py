@@ -3,6 +3,7 @@
 from types import TracebackType
 
 from ._http import DEFAULT_BASE_URL, DEFAULT_USER_AGENT, HttpClient
+from .resources.users import UsersResource
 
 
 class PixieChessClient:
@@ -34,6 +35,10 @@ class PixieChessClient:
     async def aclose(self) -> None:
         """Close the underlying HTTP connection pool."""
         await self._http.aclose()
+
+    def users(self) -> UsersResource:
+        """User endpoints (``GET /user/{id}``, ``GET /user/match-history/{address}``)."""
+        return UsersResource(self._http)
 
     async def __aenter__(self) -> "PixieChessClient":
         return self
