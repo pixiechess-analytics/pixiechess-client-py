@@ -40,7 +40,7 @@ class TournamentUserInfo(CamelModel):
 
     user_id: str
     username_display: str
-    helmet: Helmet
+    helmet: Helmet | None = None
     expires: int
     chosen_pieces: list[str] = []
     free_piece_keys: list[str] = []

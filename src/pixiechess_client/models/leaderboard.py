@@ -16,7 +16,7 @@ class LeaderboardEntry(CamelModel):
     address: str
     username: str
     username_display: str
-    helmet: Helmet
+    helmet: Helmet | None = None
     rating: float
     is_provisional: bool
     games_played: int
@@ -60,7 +60,7 @@ class PointsLeaderboardEntry(CamelModel):
     address: str
     username: str
     username_display: str
-    helmet: Helmet
+    helmet: Helmet | None = None
     total_points: int
     today: int
     this_week: int

@@ -28,12 +28,15 @@ class Helmet(CamelModel):
 
 
 class PlayerInfo(CamelModel):
-    """Compact player identity returned inline on match-history rows."""
+    """Compact player identity returned inline on match-history rows.
+
+    ``helmet`` is absent for users who haven't equipped one.
+    """
 
     address: str
     username: str
     username_display: str
-    helmet: Helmet
+    helmet: Helmet | None = None
 
 
 class SuggestSignup(CamelModel):

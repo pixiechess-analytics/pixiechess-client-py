@@ -71,6 +71,7 @@ async def test_users_get_unwraps_user_envelope() -> None:
         u = await c.users().get("alice").send()
     assert u.username == "alice"
     assert u.address == "0xabc"
+    assert u.helmet is not None
     assert u.helmet.key == "knightmare"
 
 

@@ -30,7 +30,7 @@ class User(CamelModel):
     username: str
     username_display: str
     wallet_client_type: str
-    helmet: Helmet
+    helmet: Helmet | None = None
     last_login: datetime
 
     win_rate: int
