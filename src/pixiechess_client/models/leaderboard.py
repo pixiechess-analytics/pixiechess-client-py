@@ -1,7 +1,4 @@
-"""Leaderboard models — main rating leaderboard and the points leaderboard.
-
-Mirrors `pixiechess-client-rs/src/models/leaderboard.rs`.
-"""
+"""Leaderboard models — main rating leaderboard and the points leaderboard."""
 
 from typing import Any
 

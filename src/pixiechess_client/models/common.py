@@ -1,7 +1,4 @@
-"""Shared serde models used across multiple resource bodies.
-
-Mirrors `pixiechess-client-rs/src/models/common.rs`.
-"""
+"""Shared models used across multiple resource bodies."""
 
 from datetime import date
 
@@ -31,11 +28,7 @@ class Helmet(CamelModel):
 
 
 class PlayerInfo(CamelModel):
-    """Compact player identity returned inline on match-history rows.
-
-    All four fields are required by the corpus (120/120 white/black side
-    records across 60 captured matches in the Rust client's audit).
-    """
+    """Compact player identity returned inline on match-history rows."""
 
     address: str
     username: str

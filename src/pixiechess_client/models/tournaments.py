@@ -1,8 +1,4 @@
-"""Tournament-related models.
-
-Mirrors `pixiechess-client-rs/src/models/tournaments.rs`. Field-level
-required/optional shape matches the Rust client's two-round audit.
-"""
+"""Tournament-related models."""
 
 from datetime import datetime
 from typing import Any

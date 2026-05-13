@@ -1,7 +1,4 @@
-"""Resource builders — one accessor per logical PixieChess endpoint group.
-
-Mirrors `pixiechess-client-rs/src/resources/`.
-"""
+"""Resource builders — one accessor per logical PixieChess endpoint group."""
 
 from .auctions import AuctionsResource
 from .games import GamesResource

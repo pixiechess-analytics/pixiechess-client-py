@@ -1,10 +1,4 @@
-"""User profile + match history models.
-
-Mirrors `pixiechess-client-rs/src/models/user.rs`. Every field's required /
-optional status is the one the Rust client's audit settled on against the
-live API (`tools/audit_corpus.py` over the vendored corpus + the
-`examples/sample_live.rs` 534-sample expansion).
-"""
+"""User profile + match history models."""
 
 from datetime import datetime
 

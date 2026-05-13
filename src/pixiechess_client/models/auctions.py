@@ -1,7 +1,4 @@
-"""Auction-related models.
-
-Mirrors `pixiechess-client-rs/src/models/auctions.rs`.
-"""
+"""Auction-related models."""
 
 from datetime import date, datetime
 

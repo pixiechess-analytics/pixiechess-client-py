@@ -1,7 +1,6 @@
 """Leaderboard endpoints — ``GET /leaderboard`` and ``GET /points-leaderboard``.
 
-``pageSize`` and ``sort`` were verified silently ignored on the live API
-and aren't exposed (per the behavior-pinning policy).
+The rating-leaderboard page size is server-pinned at 15 and not configurable.
 """
 
 from collections.abc import AsyncIterator
