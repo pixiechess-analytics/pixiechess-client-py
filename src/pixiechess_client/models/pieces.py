@@ -1,7 +1,5 @@
 """Piece (NFT) models — owned pieces, burned-piece records, and shared
 metadata/attribute shapes.
-
-Mirrors `pixiechess-client-rs/src/models/pieces.rs`.
 """
 
 from datetime import datetime

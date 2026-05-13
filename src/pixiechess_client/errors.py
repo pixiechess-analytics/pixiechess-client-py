@@ -1,7 +1,5 @@
 """Error hierarchy for the PixieChess client.
 
-Mirrors `pixiechess-client-rs`'s `Error` enum:
-
 - :class:`NotFoundError` — HTTP 404 from the upstream.
 - :class:`ApiError` — Any other non-2xx HTTP status; carries ``status`` + ``message``.
 - :class:`DecodeError` — Body was 2xx but didn't deserialize into the expected model.

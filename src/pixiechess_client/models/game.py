@@ -1,8 +1,4 @@
-"""Game models — single-game state plus the per-player rating delta.
-
-Mirrors `pixiechess-client-rs/src/models/game.rs`. Field-level required /
-optional shape matches the Rust client's audit against the live API.
-"""
+"""Game models — single-game state plus the per-player rating delta."""
 
 from datetime import datetime
 from typing import Any
