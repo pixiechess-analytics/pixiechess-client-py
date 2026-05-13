@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtualenvs
+.venv/
+.env/
+venv/
+
+# uv
+.python-version
+
+# Testing
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE / OS noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Captured HARs (auth tokens) and generated corpora — operator-side only.
+# Exception: the deduped vendored fixture under tests/fixtures/ stays tracked.
+*.har
+pixiechess-api.json
+!tests/fixtures/pixiechess-api.json
