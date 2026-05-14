@@ -30,10 +30,8 @@ class Helmet(CamelModel):
 class PlayerInfo(CamelModel):
     """Compact player identity returned inline on match-history rows.
 
-    Only ``address`` is guaranteed. The wire response can omit every
-    other field for "ghost" wallets — addresses that played games but
-    never registered a username/helmet. The /user/{addr} endpoint also
-    404s for these.
+    Only ``address`` is guaranteed; the other fields can be absent on
+    some accounts.
     """
 
     address: str
