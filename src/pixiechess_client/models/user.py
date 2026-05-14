@@ -27,9 +27,9 @@ class User(CamelModel):
     id: str = Field(alias="_id")
     address: str
 
-    username: str
-    username_display: str
-    wallet_client_type: str
+    username: str | None = None
+    username_display: str | None = None
+    wallet_client_type: str | None = None
     helmet: Helmet | None = None
     last_login: datetime
 

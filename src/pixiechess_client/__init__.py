@@ -14,7 +14,7 @@ from .errors import (
     PixieChessError,
 )
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 __all__ = [
     "DEFAULT_USER_AGENT",
