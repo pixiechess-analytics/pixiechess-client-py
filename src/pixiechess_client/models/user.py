@@ -20,8 +20,11 @@ class User(CamelModel):
     """Full user profile returned by ``GET /user/{identifier}`` (under the
     ``{"user": ...}`` envelope, which :class:`UsersResource.get` unwraps).
 
-    All fields are required by the live API. If the server starts omitting
-    or nulling one, decode fails loudly — that's intentional.
+    Several fields can be absent for some accounts (``username``,
+    ``username_display``, ``wallet_client_type``, ``helmet``,
+    ``last_login``) — see the per-field annotations. The remaining fields
+    are required; if the server starts omitting one of those, decode
+    fails loudly.
     """
 
     id: str = Field(alias="_id")
@@ -31,7 +34,7 @@ class User(CamelModel):
     username_display: str | None = None
     wallet_client_type: str | None = None
     helmet: Helmet | None = None
-    last_login: datetime
+    last_login: datetime | None = None
 
     win_rate: int
     match_count: int
